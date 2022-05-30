@@ -1,26 +1,22 @@
 {
-  "name": "gamersland-back",
+  "name": "el_once_ideal_back",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "test-coverage": "jest --coverage --watchAll=false",
     "start": "node src",
     "start-dev": "nodemon src -q",
     "prepare": "husky install",
-    "test": "jest"
+    "test": "jest --passWithNoTests"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "@types/jest": "^27.5.1",
     "eslint": "^8.16.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
-    "husky": "^7.0.0",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "husky": "^7.0.0"
   },
   "dependencies": {
     "@types/jest": "^27.5.1",
