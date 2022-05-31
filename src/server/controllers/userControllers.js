@@ -35,6 +35,7 @@ const registerUser = async (req, res, next) => {
     error.statusCode = 400;
     debug(chalk.red("Bad request"));
     error.customMessage = "Bad request";
+
     next(error);
   }
 };

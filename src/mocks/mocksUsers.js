@@ -6,11 +6,18 @@ const mockUserCredentials = {
   password: "password",
 };
 
-const mockNewUser = {
-  username: "pepeRana",
-  password: "pepeRana",
-  name: "Pepe la rana",
-};
+const mockNewUser = [
+  {
+    name: "cristiano ronaldo",
+    username: "cr7",
+    password: "$2b$10$YEaOaI01BbS/dLzn3UchL.mLnEl6nEXW.f2UYKGdLYiSxvqnjuBia",
+  },
+  {
+    name: "cristiano facundo",
+    username: "facu04",
+    password: "$2b$10$YEaOaI01BbS/dLzn3UchL.mLnEl6nEXW.f2UYKGdLYiSxvqnjuBia",
+  },
+];
 
 module.exports = {
   mockToken,
