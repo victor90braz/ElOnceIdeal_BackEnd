@@ -1,22 +1,18 @@
-name: Sonar Scanner
+name: Build
 on:
   push:
     branches:
       - master
+  pull_request:
+    types: [opened, synchronize, reopened]
 jobs:
   sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
         with:
           fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
-      - name: Install modules
-        run: npm ci
-      - name: Testing coverage
-        run: npm run test-coverage
-        env:
-          JWT_SECRET: ${{ secrets.JWT_SECRET }}
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
