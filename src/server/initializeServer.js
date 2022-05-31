@@ -1,5 +1,5 @@
 require("dotenv").config();
-const debug = require("debug")("socialmedia:server:initializeServer");
+const debug = require("debug")("el_once_ideal:server:initializeServer");
 const chalk = require("chalk");
 const app = require("./index");
 
