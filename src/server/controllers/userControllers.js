@@ -1,3 +1,4 @@
+require("dotenv").config();
 const bcrypt = require("bcrypt");
 const debug = require("debug");
 const chalk = require("chalk");
@@ -33,7 +34,7 @@ const registerUser = async (req, res, next) => {
   } catch (error) {
     error.statusCode = 400;
     debug(chalk.red("Bad request"));
-    error.message = "Bad request";
+    error.customMessage = "Bad request";
     next(error);
   }
 };
