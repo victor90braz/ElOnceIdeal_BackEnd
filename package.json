@@ -32,8 +32,8 @@
     "helmet": "^5.1.0",
     "jest": "^28.1.0",
     "jsonwebtoken": "^8.5.1",
-    "mongodb-memory-server": "^8.5.2",
-    "mongoose": "^6.3.4",
+    "mongodb-memory-server": "^8.6.0",
+    "mongoose": "^6.3.5",
     "morgan": "^1.10.0",
     "router": "^1.3.7",
     "supertest": "^6.2.3"
