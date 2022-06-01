@@ -1,4 +1,4 @@
-const { generalError } = require("./errors");
+const { generalError, notFoundError } = require("./errors");
 
 describe("Given a generalError function", () => {
   describe("When it's ivoked with an error without statuscode", () => {
@@ -39,6 +39,19 @@ describe("Given a generalError function", () => {
 
       expect(res.status).toHaveBeenCalledWith(expectedStatusCode);
       expect(res.json).toHaveBeenCalledWith(expectederror);
+    });
+  });
+});
+
+describe("Given a notFoundError function", () => {
+  describe("When it's invoked", () => {
+    test("Then it should call next with a an error", () => {
+      const expectedError = new Error();
+      const next = jest.fn();
+
+      notFoundError(null, null, next);
+
+      expect(next).toHaveBeenCalledWith(expectedError);
     });
   });
 });
