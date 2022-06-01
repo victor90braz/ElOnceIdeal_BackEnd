@@ -3,6 +3,7 @@ const bcrypt = require("bcrypt");
 const debug = require("debug");
 const chalk = require("chalk");
 const User = require("../../database/model/User");
+const customError = require("../../utils/customError");
 
 const registerUser = async (req, res, next) => {
   const { name, username, password } = req.body;
@@ -13,9 +14,9 @@ const registerUser = async (req, res, next) => {
   try {
     if (user) {
       const error = new Error();
-      error.customMessage = "User already exists";
+      const customNewError = customError(409, "User already exists");
       error.statusCode = 409;
-      next(error);
+      next(customNewError);
       return;
     }
 

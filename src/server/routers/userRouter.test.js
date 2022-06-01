@@ -21,8 +21,7 @@ afterAll(async () => {
 });
 
 beforeEach(async () => {
-  await request(app).post("/users/register").send(mockNewUser[0]).expect(201);
-  await request(app).post("/users/register").send(mockNewUser[1]).expect(201);
+  User.create();
 });
 
 afterEach(async () => {
