@@ -6,6 +6,11 @@ const mockUserCredentials = {
   password: "password",
 };
 
+const mockLogin = {
+  username: "villasants2",
+  password: "123456",
+};
+
 const mockNewUser = [
   {
     name: "cristiano ronaldo",
@@ -23,4 +28,5 @@ module.exports = {
   mockToken,
   mockUserCredentials,
   mockNewUser,
+  mockLogin,
 };

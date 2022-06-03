@@ -5,6 +5,7 @@ const {
   mockNewUser,
   mockToken,
   mockUserCredentials,
+  mockLogin,
 } = require("../../mocks/mocksUsers");
 const { registerUser, loginUser } = require("./userControllers");
 
@@ -154,6 +155,29 @@ describe("Given userLogin function", () => {
 
       // Assert
       expect(next).toHaveBeenCalledWith(expectError);
+    });
+  });
+
+  describe("When it is called with a user that is already in the database", () => {
+    test("Then it should call the 'next' middleware with an error", async () => {
+      const req = {
+        body: {
+          mockLogin,
+        },
+      };
+
+      User.findOne.mockImplementation(() => true);
+
+      bcrypt.compare = jest.fn().mockResolvedValue(false);
+
+      const next = jest.fn();
+      await loginUser(req, res, next);
+
+      const error = new Error();
+      error.statusCode = 403;
+      error.customMessage = "bad request";
+
+      expect(next).toHaveBeenCalledWith(error);
     });
   });
 });
