@@ -9,6 +9,7 @@ const {
   generalError,
   validationError,
 } = require("../middlewares/errors");
+const playerRouter = require("./routers/playerRouter");
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 app.use("/users", userRouter);
+app.use("/players", playerRouter);
 
 app.use(notFoundError);
 app.use(validationError);
