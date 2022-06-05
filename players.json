@@ -1,0 +1,389 @@
+{
+  "positions": {
+    "goalkeepers": [
+      {
+        "image": "https://www.futbin.com/content/fifa22/img/players/p50332827.png?v=15",
+        "name": "Buffon",
+        "position": "goalkeeper",
+        "pac": "80",
+        "sho": "77",
+        "pass": "73",
+        "dri": "80",
+        "def": "37",
+        "phy": "93"
+      },
+      {
+        "image": "https://www.futbin.com/content/fifa22/img/players/p50544479.png?v=15",
+        "name": "Alisson",
+        "position": "GK",
+        "pac": "94",
+        "sho": "93",
+        "pass": "90",
+        "dri": "96",
+        "def": "91",
+        "phy": "96"
+      },
+      {
+        "image": "https://www.futbin.com/content/fifa22/img/players/p100830791.png?v=15",
+        "name": "Neuer",
+        "position": "GK",
+        "pac": "93",
+        "sho": "95",
+        "pass": "96",
+        "dri": "94",
+        "def": "70",
+        "phy": "95"
+      }
+    ],
+    "right-fullbacks": [
+      {
+        "image": "https://www.futbin.com/content/fifa22/img/players/p50478178.png?v=15",
+        "name": "Daniel Alves",
+        "position": "RB",
+        "pac": "92",
+        "sho": "82",
+        "pass": "90",
+        "dri": "93",
+        "def": "88",
+        "phy": "83"
+      },
+      {
+        "image": "https://www.futbin.com/content/fifa22/img/players/p117671793.png?v=15",
+        "name": "Alexander-Arnold",
+        "position": "RB",
+        "pac": "92",
+        "sho": "80",
+        "pass": "94",
+        "dri": "90",
+        "def": "90",
+        "phy": "86"
+      },
+      {
+        "image": "https://www.futbin.com/content/fifa22/img/players/p84074457.png?v=15",
+        "name": "Walker",
+        "position": "RB",
+        "pac": "98",
+        "sho": "69",
+        "pass": "85",
+        "dri": "87",
+        "def": "88",
+        "phy": "92"
+      }
+    ],
+    "sweepers": [
+      {
+        "image": "https://www.futbin.com/content/fifa22/img/players/p246499.png?v=15",
+        "name": "Nesta",
+        "position": "SW",
+        "pac": "72",
+        "sho": "42",
+        "pass": "65",
+        "dri": "67",
+        "def": "94",
+        "phy": "86"
+      },
+      {
+        "image": "https://www.futbin.com/content/fifa22/img/players/p100866672.png?v=15",
+        "name": "Van Dijk",
+        "position": "SW",
+        "pac": "87",
+        "sho": "71",
+        "pass": "80",
+        "dri": "81",
+        "def": "88",
+        "phy": "94"
+      },
+      {
+        "image": "https://www.futbin.com/content/fifa22/img/players/p246528.png?v=15",
+        "name": "Puyol",
+        "position": "SW",
+        "pac": "79",
+        "sho": "49",
+        "pass": "69",
+        "dri": "60",
+        "def": "96",
+        "phy": "92"
+      }
+    ],
+    "centre-backs": [
+      {
+        "image": "https://www.futbin.com/content/fifa22/img/players/238440.png?v=15",
+        "name": "Maldini",
+        "position": "CB",
+        "pac": "87",
+        "sho": "65",
+        "pass": "77",
+        "dri": "70",
+        "def": "98",
+        "phy": "85"
+      },
+      {
+        "image": "https://www.futbin.com/content/fifa22/img/players/p50495888.png?v=15",
+        "name": "Thiago Silva",
+        "position": "CB",
+        "pac": "55",
+        "sho": "55",
+        "pass": "73",
+        "dri": "74",
+        "def": "87",
+        "phy": "80"
+      },
+      {
+        "image": "https://www.futbin.com/content/fifa22/img/players/p246490.png?v=15",
+        "name": "Cannavaro",
+        "position": "GK",
+        "pac": "84",
+        "sho": "44",
+        "pass": "65",
+        "dri": "71",
+        "def": "97",
+        "phy": "89"
+      }
+    ],
+    "left-fullbacks": [
+      {
+        "image": "https://www.futbin.com/content/fifa22/img/players/p50508324.png?v=15",
+        "name": "Marcelo",
+        "position": "LB",
+        "pac": "93",
+        "sho": "86",
+        "pass": "93",
+        "dri": "96",
+        "def": "91",
+        "phy": "89"
+      },
+      {
+        "image": "https://www.futbin.com/content/fifa22/img/players/p246533.png?v=15",
+        "name": "Roberto Carlos",
+        "position": "LB",
+        "pac": "93",
+        "sho": "89",
+        "pass": "85",
+        "dri": "84",
+        "def": "88",
+        "phy": "87"
+      },
+      {
+        "image": "https://www.futbin.com/content/fifa21/img/players/p67247820.png?v=15",
+        "name": "Chiellini",
+        "position": "LB",
+        "pac": "86",
+        "sho": "50",
+        "pass": "75",
+        "dri": "81",
+        "def": "93",
+        "phy": "90"
+      }
+    ],
+    "defensive-midfielders": [
+      {
+        "image": "https://www.futbin.com/content/fifa22/img/players/243030.png?v=15",
+        "name": "Gattuso",
+        "position": "DM",
+        "pac": "73",
+        "sho": "65",
+        "pass": "72",
+        "dri": "73",
+        "def": "91",
+        "phy": "89"
+      },
+      {
+        "image": "https://www.futbin.com/content/fifa22/img/players/p134433642.png?v=15",
+        "name": "Kante",
+        "position": "DM",
+        "pac": "80",
+        "sho": "77",
+        "pass": "73",
+        "dri": "80",
+        "def": "37",
+        "phy": "93"
+      },
+      {
+        "image": "https://www.futbin.com/content/fifa22/img/players/p246482.png?v=15",
+        "name": "Gerrard",
+        "position": "DM",
+        "pac": "93",
+        "sho": "95",
+        "pass": "96",
+        "dri": "94",
+        "def": "70",
+        "phy": "95"
+      }
+    ],
+    "central-midfielders": [
+      {
+        "image": "https://www.futbin.com/content/fifa22/img/players/10535.png?v=15",
+        "name": "Xavi",
+        "position": "CM",
+        "pac": "81",
+        "sho": "80",
+        "pass": "95",
+        "dri": "93",
+        "def": "72",
+        "phy": "72"
+      },
+      {
+        "image": "https://www.futbin.com/content/fifa22/img/players/p248451.png?v=15",
+        "name": "Zidane",
+        "position": "CM",
+        "pac": "86",
+        "sho": "93",
+        "pass": "98",
+        "dri": "98",
+        "def": "76",
+        "phy": "88"
+      },
+      {
+        "image": "https://www.futbin.com/content/fifa21/img/players/p246493.png?v=15",
+        "name": "Baggio",
+        "position": "CM",
+        "pac": "87",
+        "sho": "87",
+        "pass": "93",
+        "dri": "94",
+        "def": "41",
+        "phy": "64"
+      }
+    ],
+    "attacking-midfielders": [
+      {
+        "image": "https://www.futbin.com/content/fifa21/img/players/p100856281.png?v=15",
+        "name": "De Bruyne",
+        "position": "AT",
+        "pac": "86",
+        "sho": "92",
+        "pass": "98",
+        "dri": "93",
+        "def": "80",
+        "phy": "88"
+      },
+      {
+        "image": "https://www.futbin.com/content/fifa21/img/players/p67285867.png?v=15",
+        "name": "Modric",
+        "position": "AT",
+        "pac": "90",
+        "sho": "98",
+        "pass": "97",
+        "dri": "86",
+        "def": "86",
+        "phy": "86"
+      },
+      {
+        "image": "https://www.futbin.com/content/fifa21/img/players/p246481.png?v=15",
+        "name": "Lampard",
+        "position": "AT",
+        "pac": "81",
+        "sho": "94",
+        "pass": "89",
+        "dri": "89",
+        "def": "75",
+        "phy": "83"
+      }
+    ],
+    "wingers": [
+      {
+        "image": "https://www.futbin.com/content/fifa22/img/players/p100830791.png?v=15",
+        "name": "Mbappe",
+        "position": "RW",
+        "pac": "99",
+        "sho": "95",
+        "pass": "90",
+        "dri": "98",
+        "def": "44",
+        "phy": "88"
+      },
+      {
+        "image": "https://www.futbin.com/content/fifa22/img/players/p167792961.png?v=15",
+        "name": "Cristiano Ronaldo",
+        "position": "RW",
+        "pac": "93",
+        "sho": "98",
+        "pass": "88",
+        "dri": "95",
+        "def": "39",
+        "phy": "92"
+      },
+      {
+        "image": "https://www.futbin.com/content/fifa22/img/players/1625.png?v=15",
+        "name": "Henry",
+        "position": "RW",
+        "pac": "94",
+        "sho": "91",
+        "pass": "83",
+        "dri": "90",
+        "def": "53",
+        "phy": "80"
+      }
+    ],
+    "playmakers": [
+      {
+        "image": "https://www.futbin.com/content/fifa22/img/players/p246514.png?v=15",
+        "name": "Maradona",
+        "position": "PM",
+        "pac": "93",
+        "sho": "94",
+        "pass": "95",
+        "dri": "98",
+        "def": "42",
+        "phy": "78"
+      },
+      {
+        "image": "https://www.futbin.com/content/fifa22/img/players/5479.png?v=15",
+        "name": "Ronaldinho",
+        "position": "PM",
+        "pac": "80",
+        "sho": "85",
+        "pass": "88",
+        "dri": "90",
+        "def": "38",
+        "phy": "77"
+      },
+      {
+        "image": "https://www.futbin.com/content/fifa21/img/players/p117598535.png?v=15",
+        "name": "Messi",
+        "position": "PM",
+        "pac": "93",
+        "sho": "97",
+        "pass": "98",
+        "dri": "99",
+        "def": "40",
+        "phy": "76"
+      }
+    ],
+    "strikers": [
+      {
+        "image": "https://www.futbin.com/content/fifa22/img/players/237064.png?v=15",
+        "name": "Ronaldo",
+        "position": "ST",
+        "pac": "93",
+        "sho": "93",
+        "pass": "80",
+        "dri": "93",
+        "def": "46",
+        "phy": "80"
+      },
+      {
+        "image": "https://www.futbin.com/content/fifa22/img/players/239055.png?v=15",
+        "name": "Van Basten",
+        "position": "ST",
+        "pac": "83",
+        "sho": "94",
+        "pass": "76",
+        "dri": "89",
+        "def": "39",
+        "phy": "75"
+      },
+      {
+        "image": "https://www.futbin.com/content/fifa22/img/players/237067.png?v=15",
+        "name": "Pele",
+        "position": "ST",
+        "pac": "95",
+        "sho": "96",
+        "pass": "93",
+        "dri": "96",
+        "def": "60",
+        "phy": "76"
+      }
+    ]
+  }
+}
