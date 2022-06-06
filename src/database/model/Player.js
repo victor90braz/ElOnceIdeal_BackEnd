@@ -1,4 +1,4 @@
-const { Schema, model, SchemaTypes } = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 const PlayerSchema = new Schema({
   name: {
@@ -6,29 +6,41 @@ const PlayerSchema = new Schema({
     require: true,
     unique: true,
   },
+  surname: {
+    type: String,
+  },
+  perfil: {
+    type: String,
+  },
+  date: {
+    type: String,
+  },
+  nationality: {
+    type: String,
+  },
+  position: {
+    type: String,
+  },
   image: {
     type: String,
   },
-  category: {
-    type: String,
+  pac: {
+    type: Number,
   },
-  year: {
-    type: Date,
+  sho: {
+    type: Number,
   },
-  description: {
-    type: String,
+  pass: {
+    type: Number,
   },
-  punctuation: {
-    type: String,
-    min: 0,
-    max: 5,
+  dri: {
+    type: Number,
   },
-  played: {
-    type: Boolean,
+  def: {
+    type: Number,
   },
-  platform: {
-    type: [{ type: SchemaTypes.ObjectId, ref: "Platform" }],
-    default: [],
+  phy: {
+    type: Number,
   },
 });
 
