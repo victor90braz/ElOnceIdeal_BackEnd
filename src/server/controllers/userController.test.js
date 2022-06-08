@@ -6,8 +6,10 @@ const {
   mockToken,
   mockUserCredentials,
   mockLogin,
+  userMockPopulated,
+  userMockPopulatedWithoutPassword,
 } = require("../../mocks/mocksUsers");
-const { registerUser, loginUser } = require("./userControllers");
+const { registerUser, loginUser, getUser } = require("./userControllers");
 
 const res = {
   status: jest.fn().mockReturnThis(),
@@ -178,6 +180,44 @@ describe("Given userLogin function", () => {
       error.customMessage = "bad request";
 
       expect(next).toHaveBeenCalledWith(error);
+    });
+  });
+});
+
+describe("Given a getUser controller", () => {
+  describe("When it's invoqued with a response and a request with the username to get", () => {
+    test("Then it should call the response's status method with 200 and the json method with the user", async () => {
+      const req = { params: { username: "Carlos" } };
+
+      User.findOne = jest.fn(() => ({
+        populate: jest.fn().mockReturnValue(userMockPopulated),
+      }));
+
+      await getUser(req, res, null);
+
+      expect(res.status).toHaveBeenCalledWith(200);
+      expect(res.json).toHaveBeenCalledWith({
+        user: userMockPopulatedWithoutPassword,
+      });
+    });
+  });
+
+  describe("When it's invoqued with a next function and a request with a username that doesn't exist", () => {
+    test("Then it should call the next function with am error", async () => {
+      const req = { params: { surname: "Carlosn't" } };
+      const next = jest.fn();
+      const expectedError = {
+        message: "No user with that username found",
+        code: 404,
+      };
+
+      User.findOne = jest.fn(() => ({
+        populate: jest.fn().mockRejectedValue({}),
+      }));
+
+      await getUser(req, null, next);
+
+      expect(next).toHaveBeenCalledWith(expectedError);
     });
   });
 });

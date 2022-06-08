@@ -5,6 +5,7 @@ const chalk = require("chalk");
 const jsonwebtoken = require("jsonwebtoken");
 const User = require("../../database/model/User");
 const customError = require("../../utils/customError");
+const Player = require("../../database/model/Player");
 
 const registerUser = async (req, res, next) => {
   const { name, username, password } = req.body;
@@ -62,7 +63,6 @@ const loginUser = async (req, res, next) => {
         };
 
         const token = jsonwebtoken.sign(userData, process.env.JWT_SECRET);
-
         res.status(200).json({ token });
       } else {
         const error = new Error();
@@ -82,4 +82,33 @@ const loginUser = async (req, res, next) => {
   }
 };
 
-module.exports = { registerUser, loginUser };
+const getUser = async (req, res, next) => {
+  const { surname } = req.params;
+
+  try {
+    const user = await User.findOne({ surname }).populate(
+      "players",
+      null,
+      Player
+    );
+
+    const userWithoutPassword = {
+      username: user.username,
+      name: user.name,
+      image: user.image,
+      notes: user.notes,
+      id: user.id,
+    };
+
+    res.status(200).json({ user: userWithoutPassword });
+    debug(chalk.green("Someone asked for a user"));
+  } catch (err) {
+    debug(chalk.red("Someone tried to get a user that we don't have"));
+
+    err.message = "No user with that username found";
+    err.code = 404;
+    next(err);
+  }
+};
+
+module.exports = { registerUser, loginUser, getUser };
