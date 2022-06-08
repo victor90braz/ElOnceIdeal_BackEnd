@@ -29,12 +29,12 @@ afterEach(async () => {
 
 describe("Given a GET '/players' endpoint", () => {
   const newPlayerRequestReceived = {
-    id: "1990",
-    name: "Ronaldo",
-    username: "CR7",
-    perfil: "Portugal",
+    id: "1889",
+    name: "Zidane",
+    username: "Zizou",
+    perfil: "France",
     date: "18/06/1990",
-    nationality: "Brasil",
+    nationality: "Frances",
     position: "Delantero",
     image:
       "https://phantom-elmundo.unidadeditorial.es/d1768bcbe2e6082856d1337df7a…",

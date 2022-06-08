@@ -53,15 +53,15 @@ const mockPlayers = [
 ];
 
 const mockPlayerInformation = {
-  id: 3,
-  name: "Maincra",
+  id: "1990",
+  name: "Ronaldo",
+  username: "CR7",
+  perfil: "Portugal",
+  date: "18/06/1990",
+  nationality: "Portugues",
+  position: "Delantero",
   image:
-    "https://pbs.twimg.com/profile_images/724829006764367874/M6wkHDHt_400x400.jpg",
-  category: "Sandbox",
-  year: new Date("2013/10/21"),
-  description: "BlaBlaBla",
-  played: true,
-  platform: [],
+    "https://phantom-elmundo.unidadeditorial.es/d1768bcbe2e6082856d1337df7a…",
 };
 
 module.exports = { mockPlayers, mockPlayerInformation };
