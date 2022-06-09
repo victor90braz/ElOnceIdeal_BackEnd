@@ -2,6 +2,8 @@ const chalk = require("chalk");
 const debug = require("debug");
 const Player = require("../../database/model/Player");
 
+const customError = require("../../utils/customError");
+
 const getPlayer = async (req, res) => {
   debug(chalk.green("Player request received"));
   const players = await Player.find();
@@ -25,4 +27,44 @@ const deletePlayer = async (req, res, next) => {
   }
 };
 
-module.exports = { getPlayer, deletePlayer };
+const createPlayer = async (req, res, next) => {
+  const { name, image, speed, shoot, pass, agility, defense, strength } =
+    req.body;
+
+  const searchByName = { name };
+  const player = await Player.findOne(searchByName);
+
+  try {
+    if (player) {
+      const error = new Error();
+      const customNewError = customError(409, "Player already exists");
+      error.statusCode = 409;
+      next(customNewError);
+      return;
+    }
+
+    const playerCreate = {
+      name,
+      image,
+      speed,
+      shoot,
+      pass,
+      agility,
+      defense,
+      strength,
+    };
+
+    await Player.create(playerCreate);
+
+    debug(chalk.green("Player created"));
+    res.status(201).json({ msg: "Player created" });
+  } catch (error) {
+    error.statusCode = 400;
+    debug(chalk.red("Bad request"));
+    error.customMessage = "Bad request";
+
+    next(error);
+  }
+};
+
+module.exports = { getPlayer, deletePlayer, createPlayer };

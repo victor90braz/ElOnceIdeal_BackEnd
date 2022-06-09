@@ -1,5 +1,11 @@
 const Player = require("../../database/model/Player");
-const { getPlayer, deletePlayer } = require("./playerControllers");
+const { mockNewPlayer } = require("../../mocks/mockPlayers");
+const { playerCredentials } = require("../../schemas/playerCredentials");
+const {
+  getPlayer,
+  deletePlayer,
+  createPlayer,
+} = require("./playerControllers");
 
 const listPlayers = [
   {
@@ -61,12 +67,13 @@ jest.mock("../../database/model/Player", () => ({
   findById: jest.fn(),
 }));
 
+const res = {
+  status: jest.fn().mockReturnThis(),
+  json: jest.fn(),
+};
+
 describe("Given the GET players controller", () => {
   describe("When invoked with a response", () => {
-    const res = {
-      status: jest.fn().mockReturnThis(),
-      json: jest.fn(),
-    };
     test("Then it should call the response status method 200", async () => {
       await getPlayer(null, res);
 
@@ -88,11 +95,6 @@ describe("Given the GET players controller", () => {
 describe("Given a deletePlayer controller", () => {
   describe("When it's invoqued with a response and a request with an id to delete", () => {
     test("Then it should call the response's status method with 200 and the json method with a 'Player deleted' message", async () => {
-      const res = {
-        status: jest.fn().mockReturnThis(),
-        json: jest.fn(),
-      };
-
       const req = { params: { idPlayer: 1990 } };
 
       Player.findByIdAndDelete = jest.fn().mockResolvedValue();
@@ -115,6 +117,84 @@ describe("Given a deletePlayer controller", () => {
 
       Player.findByIdAndDelete = jest.fn().mockRejectedValue({});
       await deletePlayer(req, null, next);
+
+      expect(next).toHaveBeenCalledWith(expectedError);
+    });
+  });
+});
+
+describe("Given a create funtion", () => {
+  describe("When it`s invoked whith a response", () => {
+    test("Then it should call the response method status with 201", async () => {
+      const req = {
+        body: {
+          name: "Ronadlinho",
+          image:
+            "https://imagenes.20minutos.es/files/og_thumbnail/uploads/imagenes/2022/01/27/ronaldinho.jpeg",
+          pac: 86,
+          sho: 98,
+          pass: 99,
+          dri: 96,
+          def: 95,
+          phy: 96,
+        },
+      };
+
+      const message = { msg: "Player created" };
+      const expectedStatus = 201;
+
+      Player.findOne = jest.fn().mockResolvedValue(false);
+      Player.create = jest.fn().mockResolvedValue(message);
+
+      await createPlayer(req, res);
+
+      expect(res.status).toHaveBeenCalledWith(expectedStatus);
+      expect(res.json).toHaveBeenCalledWith(message);
+    });
+  });
+
+  describe("When it's called with an existen username", () => {
+    test("Then it should call response with error message 'User already exists'", async () => {
+      const req = {
+        body: mockNewPlayer,
+      };
+
+      const expectErrorMessage = new Error();
+      expectErrorMessage.customMessage = "Player already exists";
+
+      const next = jest.fn();
+      Player.findOne = jest.fn().mockResolvedValue(playerCredentials);
+
+      await createPlayer(req, null, next);
+
+      expect(next).toHaveBeenCalledWith(expectErrorMessage);
+    });
+  });
+
+  describe("When it's invoqued with a request with an invalid user and a response", () => {
+    test("Then it should call the received next function with an error", async () => {
+      const req = {
+        body: {
+          name: "",
+          image: "",
+          pac: "",
+          sho: "",
+          pass: "",
+          dri: "",
+          def: "",
+          phy: "",
+        },
+      };
+      const next = jest.fn();
+
+      const expectedError = new Error();
+      expectedError.code = 400;
+      expectedError.message = "Bad request";
+
+      Player.findOne = jest.fn().mockResolvedValue(false);
+      Player.create = jest.fn().mockRejectedValueOnce(expectedError);
+
+      await createPlayer(req, null, next);
 
       expect(next).toHaveBeenCalledWith(expectedError);
     });
