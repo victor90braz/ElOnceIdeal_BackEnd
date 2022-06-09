@@ -30,4 +30,30 @@ const mockPlayerInformation = {
     "https://phantom-elmundo.unidadeditorial.es/d1768bcbe2e6082856d1337df7a…",
 };
 
-module.exports = { mockPlayers, mockPlayerInformation };
+const mockNewPlayer = [
+  {
+    name: "rivaldo",
+    image:
+      "https://imagenes.20minutos.es/files/og_thumbnail/uploads/imagenes/2022/01/27/mbappe.jpeg",
+    pac: 36,
+    sho: 88,
+    pass: 89,
+    dri: 86,
+    def: 85,
+    phy: 86,
+  },
+
+  {
+    name: "Mbape",
+    image:
+      "https://imagenees.20minutos.es/files/og_thumbnail/uploads/imagenes/2022/01/27/mbappe.jpeg",
+    pac: 96,
+    sho: 98,
+    pass: 99,
+    dri: 96,
+    def: 95,
+    phy: 96,
+  },
+];
+
+module.exports = { mockPlayers, mockPlayerInformation, mockNewPlayer };
