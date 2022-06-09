@@ -31,4 +31,7 @@ const userRegisterCredentials = {
   }),
 };
 
-module.exports = { userRegisterCredentials, credentialsLoginSchema };
+module.exports = {
+  userRegisterCredentials,
+  credentialsLoginSchema,
+};

@@ -24,22 +24,22 @@ const PlayerSchema = new Schema({
   image: {
     type: String,
   },
-  pac: {
+  speed: {
     type: Number,
   },
-  sho: {
+  shoot: {
     type: Number,
   },
   pass: {
     type: Number,
   },
-  dri: {
+  agility: {
     type: Number,
   },
-  def: {
+  defense: {
     type: Number,
   },
-  phy: {
+  strength: {
     type: Number,
   },
 });
