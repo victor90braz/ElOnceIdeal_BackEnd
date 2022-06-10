@@ -67,7 +67,6 @@ const createPlayer = async (req, res, next) => {
   }
 };
 
-// delete update aquiiii
 const editPlayer = async (req, res, next) => {
   const { idPlayer } = req.params;
   const { name, image, speed, shoot, pass, agility, defense, strength } =
