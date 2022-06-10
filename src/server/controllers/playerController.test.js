@@ -5,6 +5,7 @@ const {
   getPlayer,
   deletePlayer,
   createPlayer,
+  editPlayer,
 } = require("./playerControllers");
 
 const listPlayers = [
@@ -195,6 +196,63 @@ describe("Given a create funtion", () => {
       Player.create = jest.fn().mockRejectedValueOnce(expectedError);
 
       await createPlayer(req, null, next);
+
+      expect(next).toHaveBeenCalledWith(expectedError);
+    });
+  });
+});
+
+describe("Given a editPlayer controller", () => {
+  const idPlayer = "1998";
+
+  const req = {
+    params: { idPlayer },
+    body: {
+      name: "Mbapé",
+      image:
+        "https://imagenes.20minutos.es/files/og_thumbnail/uploads/imagenes/2022/01/27/mbappe.jpeg",
+      speed: 50,
+      shoot: 99,
+      pass: 99,
+      agility: 99,
+      defense: 90,
+      strength: 90,
+    },
+  };
+  describe("When it's invoqued with a title, content, category and a id of the Player to edit", () => {
+    test("Then it should call the response's status method with 200 and the new object edited", async () => {
+      const newPlayer = {
+        name: "Mbapé 2022",
+        image:
+          "https://imagenes.20minutos.es/files/og_thumbnail/uploads/imagenes/2022/01/27/mbappe.jpeg",
+        speed: 50,
+        shoot: 99,
+        pass: 99,
+        agility: 99,
+        defense: 90,
+        strength: 90,
+      };
+
+      Player.findByIdAndUpdate = jest.fn().mockResolvedValue({});
+      Player.findById = jest.fn().mockResolvedValue(newPlayer);
+
+      await editPlayer(req, res, null);
+
+      expect(res.status).toHaveBeenCalledWith(200);
+      expect(res.json).toHaveBeenCalledWith(newPlayer);
+    });
+  });
+
+  describe("When it's invoqued with a response and a request with a invalid id to edit", () => {
+    test("Then it should call the response's status method with 200 and the json method with a 'Player edited' message", async () => {
+      const next = jest.fn();
+      const expectedError = {
+        statusCode: 400,
+        customMessage: "Error editing player, check if it's exist",
+      };
+
+      Player.findByIdAndUpdate = jest.fn().mockRejectedValue({});
+      await editPlayer(req, null, next);
 
       expect(next).toHaveBeenCalledWith(expectedError);
     });
