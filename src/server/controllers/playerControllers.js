@@ -67,4 +67,38 @@ const createPlayer = async (req, res, next) => {
   }
 };
 
-module.exports = { getPlayer, deletePlayer, createPlayer };
+// delete update aquiiii
+const editPlayer = async (req, res, next) => {
+  const { idPlayer } = req.params;
+  const { name, image, speed, shoot, pass, agility, defense, strength } =
+    req.body;
+
+  try {
+    const playerEdited = {
+      name,
+      image,
+      speed,
+      shoot,
+      pass,
+      agility,
+      defense,
+      strength,
+    };
+
+    await Player.findByIdAndUpdate(idPlayer, playerEdited);
+    const newPlayer = await Player.findById(idPlayer);
+
+    debug(newPlayer);
+
+    res.status(200).json(newPlayer);
+  } catch (error) {
+    debug(chalk.red("Bad request, player not exist to be edit."));
+
+    error.statusCode = 400;
+    error.customMessage = "Error editing player, check if it's exist";
+
+    next(error);
+  }
+};
+
+module.exports = { getPlayer, deletePlayer, createPlayer, editPlayer };
