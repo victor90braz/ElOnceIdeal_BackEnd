@@ -1,5 +1,7 @@
 const bcrypt = require("bcrypt");
+const Player = require("../../database/model/Player");
 const User = require("../../database/model/User");
+const { mockPlayerById } = require("../../mocks/mockPlayers");
 
 const {
   mockNewUser,
@@ -9,6 +11,7 @@ const {
   userMockPopulated,
   userMockPopulatedWithoutPassword,
 } = require("../../mocks/mocksUsers");
+const { getPlayerID } = require("./playerControllers");
 const { registerUser, loginUser, getUser } = require("./userControllers");
 
 const res = {
@@ -218,6 +221,34 @@ describe("Given a getUser controller", () => {
       await getUser(req, null, next);
 
       expect(next).toHaveBeenCalledWith(expectedError);
+    });
+  });
+
+  describe("Given a getPlayerID controller", () => {
+    const req = {
+      params: { player: "rivaldo" },
+    };
+    describe("When it's invoqued with a response and a id of a player to find", () => {
+      test("Then it should call the response's status method with 200 and the json method with a note", async () => {
+        Player.findById = jest.fn().mockResolvedValue(mockPlayerById[0]);
+
+        await getPlayerID(req, res, null);
+
+        expect(res.status).toHaveBeenCalledWith(200);
+      });
+    });
+
+    describe("When it's invoqued with next function and an id of a note that doesn't exists", () => {
+      test("Then it should call next with an 404 error and the message: 'Player not found'", async () => {
+        const next = jest.fn();
+        const err = { code: 404, message: "Player not found" };
+
+        Player.findById = jest.fn().mockRejectedValue({});
+
+        await getPlayerID(req, null, next);
+
+        expect(next).toHaveBeenCalledWith(err);
+      });
     });
   });
 });

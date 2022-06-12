@@ -56,4 +56,23 @@ const mockNewPlayer = [
   },
 ];
 
-module.exports = { mockPlayers, mockPlayerInformation, mockNewPlayer };
+const mockPlayerById = [
+  {
+    def: 85,
+    dri: 86,
+    image:
+      "https://imagenes.20minutos.es/files/og_thumbnail/uploads/imagenes/2022/01/27/mbappe.jpeg",
+    name: "rivaldo",
+    pac: 36,
+    pass: 89,
+    phy: 86,
+    sho: 88,
+  },
+];
+
+module.exports = {
+  mockPlayers,
+  mockPlayerInformation,
+  mockNewPlayer,
+  mockPlayerById,
+};

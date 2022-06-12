@@ -10,6 +10,22 @@ const getPlayer = async (req, res) => {
   res.status(200).json(players);
 };
 
+const getPlayerID = async (req, res, next) => {
+  const { idPlayer } = req.params;
+  try {
+    const player = await Player.findById(idPlayer);
+
+    debug(chalk.green("Someone asked for a specific player"));
+
+    res.status(200).json({ player });
+  } catch (err) {
+    err.message = "Player not found";
+    err.code = 404;
+
+    next(err);
+  }
+};
+
 const deletePlayer = async (req, res, next) => {
   const { idPlayer } = req.params;
 
@@ -100,4 +116,10 @@ const editPlayer = async (req, res, next) => {
   }
 };
 
-module.exports = { getPlayer, deletePlayer, createPlayer, editPlayer };
+module.exports = {
+  getPlayer,
+  deletePlayer,
+  createPlayer,
+  editPlayer,
+  getPlayerID,
+};
