@@ -87,7 +87,6 @@ const editPlayer = async (req, res, next) => {
   const { idPlayer } = req.params;
   const { name, image, speed, shoot, pass, agility, defense, strength } =
     req.body;
-
   try {
     const playerEdited = {
       name,

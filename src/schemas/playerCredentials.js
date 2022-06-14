@@ -9,12 +9,12 @@ const playerCredentials = {
     image: Joi.string()
       .messages({ message: "Content for the image is required" })
       .required(),
-    speed: Joi.number().required(),
-    shoot: Joi.number().required(),
-    pass: Joi.number().required(),
-    agility: Joi.number().required(),
-    defense: Joi.number().required(),
-    strength: Joi.number().required(),
+    speed: Joi.number().integer().min(1).max(99).required(),
+    shoot: Joi.number().integer().min(1).max(99).required(),
+    pass: Joi.number().integer().min(1).max(99).required(),
+    agility: Joi.number().integer().min(1).max(99).required(),
+    defense: Joi.number().integer().min(1).max(99).required(),
+    strength: Joi.number().integer().min(1).max(99).required(),
   }),
 };
 
