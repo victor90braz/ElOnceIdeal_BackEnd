@@ -44,8 +44,19 @@ const deletePlayer = async (req, res, next) => {
 };
 
 const createPlayer = async (req, res, next) => {
-  const { name, image, speed, shoot, pass, agility, defense, strength } =
-    req.body;
+  const {
+    name,
+    nationality,
+    perfil,
+    video,
+    image,
+    speed,
+    shoot,
+    pass,
+    agility,
+    defense,
+    strength,
+  } = req.body;
 
   const searchByName = { name };
   const player = await Player.findOne(searchByName);
@@ -61,6 +72,9 @@ const createPlayer = async (req, res, next) => {
 
     const playerCreate = {
       name,
+      nationality,
+      perfil,
+      video,
       image,
       speed,
       shoot,
@@ -85,11 +99,25 @@ const createPlayer = async (req, res, next) => {
 
 const editPlayer = async (req, res, next) => {
   const { idPlayer } = req.params;
-  const { name, image, speed, shoot, pass, agility, defense, strength } =
-    req.body;
+  const {
+    name,
+    nationality,
+    perfil,
+    video,
+    image,
+    speed,
+    shoot,
+    pass,
+    agility,
+    defense,
+    strength,
+  } = req.body;
   try {
     const playerEdited = {
       name,
+      nationality,
+      perfil,
+      video,
       image,
       speed,
       shoot,

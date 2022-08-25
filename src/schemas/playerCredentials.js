@@ -6,6 +6,15 @@ const playerCredentials = {
       .max(30)
       .messages({ message: "A name is required" })
       .required(),
+    nationality: Joi.string()
+      .messages({ message: "Content for the nationality is required" })
+      .required(),
+    perfil: Joi.string()
+      .messages({ message: "Content for the perfil is required" })
+      .required(),
+    video: Joi.string()
+      .messages({ message: "Content for the video is required" })
+      .required(),
     image: Joi.string()
       .messages({ message: "Content for the image is required" })
       .required(),

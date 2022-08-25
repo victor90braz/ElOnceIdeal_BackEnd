@@ -6,24 +6,30 @@ const PlayerSchema = new Schema({
     require: true,
     unique: true,
   },
-  surname: {
+  nationality: {
     type: String,
   },
   perfil: {
     type: String,
   },
-  date: {
-    type: String,
-  },
-  nationality: {
-    type: String,
-  },
-  position: {
+  video: {
     type: String,
   },
   image: {
     type: String,
   },
+  surname: {
+    type: String,
+  },
+
+  date: {
+    type: String,
+  },
+
+  position: {
+    type: String,
+  },
+
   speed: {
     type: Number,
   },
