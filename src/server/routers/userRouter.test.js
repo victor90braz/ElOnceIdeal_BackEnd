@@ -30,9 +30,9 @@ afterEach(async () => {
 
 describe("Given a POST '/register' endpoint", () => {
   const newUserRequestReceived = {
-    username: "hello",
-    password: "hello",
-    name: "hello",
+    name: "victor",
+    username: "victor90braz",
+    password: "victorbraz",
   };
 
   describe("When it receives a request", () => {
