@@ -7,6 +7,8 @@ const credentialsLoginSchema = {
       .messages({ message: "A username is Required" })
       .required(),
     password: Joi.string()
+
+      .min(9)
       .max(20)
       .messages({ message: "A Password is Required" })
       .required(),
@@ -24,9 +26,11 @@ const userRegisterCredentials = {
       .messages({ message: "A username is Required" })
       .required(),
     password: Joi.string()
-      .min(5)
+      .min(9)
       .max(20)
-      .messages({ message: "A Password is Required" })
+      .messages({
+        message: "A Password is Required. Min 9 characters long",
+      })
       .required(),
   }),
 };
